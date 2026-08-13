@@ -6,9 +6,11 @@ const server = http.createServer((req, res) => {
   res.statusCode = 201;
   res.setHeader ('Content-Type', 'application/json; charset=utf-8');
 
-  res.end(JSON.stringify({ status: "ok" }));
+ (JSON.stringify({ status: "ok" }));
 });
  server.listen(PORTA, () => {
   console.log(new Date().toISOString());
   console.log(`Servidor funcionando na porta ${PORTA}`);
  });
+
+ // O código não exibiria a mensagem sem o res.end 
