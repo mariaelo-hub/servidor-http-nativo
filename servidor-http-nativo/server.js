@@ -9,5 +9,6 @@ const server = http.createServer((req, res) => {
   res.end("Recurso criado!");
 });
  server.listen(PORTA, () => {
+  console.log(new Date().toISOString());
   console.log(`Servidor funcionando na porta ${PORTA}`);
  });
