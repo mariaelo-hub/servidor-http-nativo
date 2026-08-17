@@ -19,10 +19,14 @@ const server = http.createServer((req, res) => {
             {numero_telefone: "67 99999 9999",
                 endereco: "Rua da Alegria, 99, Centro"}}));
     }
-
+  if (req.method == "GET" && req.url == "/status") {
+        return res.end(JSON.stringify({data:
+         {"status": "ok"}  }));
+    }
     if (req.method == "GET" && req.url == "/produtos") {
         return res.end(JSON.stringify(produtos));
     }
+
 
     res.end(JSON.stringify({data: "Página Inicial"}))
 })
