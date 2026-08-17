@@ -26,7 +26,10 @@ const server = http.createServer((req, res) => {
     if (req.method == "GET" && req.url == "/produtos") {
         return res.end(JSON.stringify(produtos));
     }
-
+    else{
+        res.statusCode = 404
+          return res.end(JSON.stringify("error 404, nao encontrada"));
+    }
 
     res.end(JSON.stringify({data: "Página Inicial"}))
 })
